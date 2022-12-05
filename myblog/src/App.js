@@ -5,13 +5,13 @@ import { useEffect, useState } from 'react';
 
 function App() {
   const [blogs, setBlogs] = useState([])
-  const url = 'htt/ps://jsonplaceholder.typicode.com/posts';
-  // const url2 = 'http://localhost:4000/';
+  // const url = 'htt/ps://jsonplaceholder.typicode.com/posts';
+  const url2 = 'http://localhost:4000/';
   // const url3 = '../../api/app.js';
 
   useEffect( () => {
-    fetch(url)
-    // fetch(url2)
+    // fetch(url)
+    fetch(url2)
       .then( res =>  res.json())
       .then( data => setBlogs(data))
       // console.log(blogs)
