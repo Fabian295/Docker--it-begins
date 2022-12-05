@@ -5,12 +5,13 @@ import { useEffect, useState } from 'react';
 
 function App() {
   const [blogs, setBlogs] = useState([])
-  // const url = 'https://jsonplaceholder.typicode.com/posts';
-  const url2 = 'http://localhost:4000/'
+  const url = 'htt/ps://jsonplaceholder.typicode.com/posts';
+  // const url2 = 'http://localhost:4000/';
+  // const url3 = '../../api/app.js';
 
   useEffect( () => {
-    // fetch(url)
-    fetch(url2)
+    fetch(url)
+    // fetch(url2)
       .then( res =>  res.json())
       .then( data => setBlogs(data))
       // console.log(blogs)
@@ -38,7 +39,13 @@ function App() {
       <main className="blog-list">
         <ul>
           {blogs.map((blog) => (
-            <li key={blog.id}>{blog.title}</li>
+            <li key={blog.id}>
+              {blog.title}
+              <p>
+                {blog.body && blog.body}
+              </p>
+            </li>
+
           ))}
         </ul>
       </main>
